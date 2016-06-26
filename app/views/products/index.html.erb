@@ -1,0 +1,18 @@
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <td>id</td>
+      <td>name</td>
+      <td>price</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.id  %></td>
+        <td><%= product.name %></td>
+        <td><%= product.price %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
