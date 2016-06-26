@@ -1,3 +1,9 @@
+<br>
+<div class="pull-right">
+  <%= link_to("New Product", new_product_path, remote: true, class:"btn btn-danger") %>
+</div>
+<br>
+<hr>
 <table class="table table-bordered table-striped">
   <thead>
     <tr>
@@ -7,12 +13,8 @@
     </tr>
   </thead>
   <tbody>
-    <% @products.each do |product| %>
-      <tr>
-        <td><%= product.id  %></td>
-        <td><%= product.name %></td>
-        <td><%= product.price %></td>
-      </tr>
-    <% end %>
+    <%= render "index" %>
   </tbody>
 </table>
+
+<div id="product-modal" class="modal fade"></div>
