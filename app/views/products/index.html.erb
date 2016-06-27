@@ -1,6 +1,6 @@
 <br>
 <div class="pull-right">
-  <%= link_to("New Product", new_product_path, remote: true, class:"btn btn-danger") %>
+  <%= link_to("New Product", new_product_path, remote: true, class:"btn btn-primary") %>
 </div>
 <br>
 <hr>
@@ -10,11 +10,13 @@
       <td>id</td>
       <td>name</td>
       <td>price</td>
+      <td colspan="2">Action</td>
     </tr>
   </thead>
-  <tbody>
-    <%= render "index" %>
+  <tbody class="product-index"  id="products_table">
+    <% @products.each do |product| %>
+      <%= render "index", product: product%>
+    <% end %>
   </tbody>
 </table>
-
 <div id="product-modal" class="modal fade"></div>

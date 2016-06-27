@@ -1,0 +1,9 @@
+$("ul.errors").html("");
+<% if @product.errors.any? %>
+  <% @product.errors.full_messages.each do |message| %>
+    $("#errors").append($("<li />").html("<%= message.html_safe %>"));
+  <% end %>
+<% else %>
+  $('#products_table').append("<%= j render 'index', product: product %>");
+  $("#product-modal").modal("hide");
+<% end %>
