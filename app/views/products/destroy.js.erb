@@ -1,2 +1,3 @@
-
-$('#products_table tr[data-id="<%= @product.id %>"]').remove();
+$('#products_table tr[data-id="<%= @product.id %>"]').fadeOut(900,function(){
+  $(this).remove();
+});
