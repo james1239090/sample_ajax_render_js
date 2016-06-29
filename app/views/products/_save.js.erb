@@ -5,13 +5,20 @@ $("ul.errors").html("");
   <% end %>
 <% else %>
   $("#product-modal").modal("hide");
-  var trRow = $('#products_table tr[data-id="<%= @product.id %>"]');
-  var trRowPrev = trRow.prev();
-  trRow.remove();
-  if (trRowPrev.data()){
-    trRowPrev.after("<%= j render 'index', product: @product %>");
-  }else{
-    $('#products_table').prepend("<%= j render 'index', product: @product %>");
-  }
+
+  <% if actionName == 'update' %>
+
+    var trRow = $('#products_table tr[data-id="<%= @product.id %>"]');
+    var trRowPrev = trRow.prev();
+    trRow.remove();
+    if (trRowPrev.data()){
+      trRowPrev.after("<%= j render 'index', product: @product %>");
+    }else{
+      $('#products_table').prepend("<%= j render 'index', product: @product %>");
+    }
+  <% else %>
+      $('#products_table').append("<%= j render 'index', product: @product %>")
+  <% end %>
+
 
 <% end %>
