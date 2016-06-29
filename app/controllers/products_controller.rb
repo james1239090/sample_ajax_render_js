@@ -1,7 +1,6 @@
 class ProductsController < ApplicationController
   def index
     @products = Product.all
-
   end
   def new
     @product = Product.new
@@ -11,16 +10,15 @@ class ProductsController < ApplicationController
     # @products = Product.all
     respond_to do |format|
       if @product.save
-        format.js { render 'create' , product: @product}
+        format.js
         format.html {redirect_to products_path}
       else
-        format.js { render 'create' , product: @product }
+        format.js
       end
 
     end
 
   end
-
   def edit
 
   end
@@ -31,6 +29,9 @@ class ProductsController < ApplicationController
 
   def destroy
 
+    @product = Product.find(params[:id])
+    @product.destroy
+    redirect_to products_path
   end
 
 
