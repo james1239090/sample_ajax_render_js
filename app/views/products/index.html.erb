@@ -15,7 +15,7 @@
   </thead>
   <tbody class="product-index"  id="products_table">
     <% @products.each do |product| %>
-      <%= render "index", :product => product  %>
+      <%= render "product", :product => product  %>
     <% end %>
   </tbody>
 </table>

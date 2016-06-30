@@ -7,17 +7,7 @@ class ProductsController < ApplicationController
   end
   def create
     @product = Product.new(product_params)
-    # @products = Product.all
-    respond_to do |format|
-      if @product.save
-        format.js
-        format.html {redirect_to products_path}
-      else
-        format.js
-      end
-
-    end
-
+    @product.save
   end
   def edit
     @product = Product.find(params[:id])

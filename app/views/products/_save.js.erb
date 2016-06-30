@@ -12,13 +12,12 @@ $("ul.errors").html("");
     var trRowPrev = trRow.prev();
     trRow.remove();
     if (trRowPrev.data()){
-      trRowPrev.after("<%= j render 'index', product: @product %>");
+      trRowPrev.after("<%= j render 'product', product: @product %>");
     }else{
-      $('#products_table').prepend("<%= j render 'index', product: @product %>");
+      $('#products_table').prepend("<%= j render 'product', product: @product %>");
     }
   <% else %>
-      $('#products_table').append("<%= j render 'index', product: @product %>")
+      $('#products_table').append("<%= j render 'product', product: @product %>")
   <% end %>
-
 
 <% end %>

@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-
+Product.destroy_all
 
 Product.create(name: "iPhone 4s", price: 10000)
 Product.create(name: "iPhone 5", price: 12000)
